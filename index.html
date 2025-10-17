@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            background-attachment: fixed;
+            color: #424242;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        header {
+            background: linear-gradient(135deg, #1976d2, #42a5f5);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeIn 1s ease-in;
+        }
+        section {
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+            animation: slideUp 0.8s ease-out;
+        }
+        section h2 {
+            color: #1976d2;
+            border-bottom: 3px solid #42a5f5;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .portfolio-item {
+            border: none;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 12px;
+            transition: all 0.4s ease;
+            background: linear-gradient(145deg, #ffffff, #f5f5f5);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .portfolio-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(66, 165, 245, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        .portfolio-item:hover::before {
+            left: 100%;
+        }
+        .portfolio-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+        }
+        .portfolio-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        .portfolio-item a {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #42a5f5;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+        .portfolio-item a:hover {
+            background: #42a5f5;
+            color: white;
+            box-shadow: 0 4px 15px rgba(66, 165, 245, 0.4);
+        }
+        .resume-link {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .resume-link a {
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 1rem 2rem;
+            border: 2px solid #42a5f5;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+        .resume-link a:hover {
+            background: #42a5f5;
+            color: white;
+            box-shadow: 0 4px 15px rgba(66, 165, 245, 0.4);
+        }
+        .resume-details {
+            margin-top: 2rem;
+        }
+        .resume-details h3 {
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #424242;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        .resume-details ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .resume-details li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .resume-details li::before {
+            content: '•';
+            color: #42a5f5;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -0.2rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #1976d2;
+            color: white;
+            font-size: 0.9rem;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            section {
+                padding: 3rem 1.5rem;
+                margin: 1rem;
+            }
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+    </header>
+    
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hi, I'm [Your Name]. I'm a [your profession, e.g., designer/developer]. [Add a short bio here.]</p>
+        
+        <div class="resume-details">
+            <h3>Professional Summary</h3>
+            <p>[Brief summary from your resume, e.g., "Experienced designer with 5+ years in graphic design and web development."]</p>
+            
+            <h3>Experience</h3>
+            <ul>
+                <li><strong>[Job Title, Company]</strong> - [Dates]<br>[Description of responsibilities and achievements.]</li>
+                <li><strong>[Job Title, Company]</strong> - [Dates]<br>[Description of responsibilities and achievements.]</li>
+                <!-- Add more as needed -->
+            </ul>
+            
+            <h3>Education</h3>
+            <ul>
+                <li><strong>[Degree, Field]</strong> - [Institution], [Year]<br>[Any relevant details or honors.]</li>
+                <!-- Add more as needed -->
+            </ul>
+            
+            <h3>Skills</h3>
+            <ul>
+                <li>[Skill 1, e.g., Adobe Creative Suite]</li>
+                <li>[Skill 2, e.g., HTML/CSS]</li>
+                <li>[Skill 3, e.g., Project Management]</li>
+                <!-- Add more as needed -->
+            </ul>
+            
+            <h3>Certifications/Awards</h3>
+            <ul>
+                <li>[Certification or Award 1] - [Details]</li>
+                <!-- Add more as needed -->
+            </ul>
+        </div>
+        
+        <div class="resume-link">
+            <a href="[path/to/your/resume.pdf]" download>Download Full Resume</a>
+        </div>
+    </section>
+    
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="portfolio-grid">
+            <!-- Add more items as needed -->
+            <div class="portfolio-item">
+                <img src="path/to/your/design1.jpg" alt="Design 1">
+                <p>Description of design 1.</p>
+                <a href="path/to/your/design1.pdf" download>Download</a>
+            </div>
+            <div class="portfolio-item">
+                <img src="path/to/your/design2.jpg" alt="Design 2">
+                <p>Description of design 2.</p>
+                <a href="path/to/your/design2.pdf" download>Download</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2023 [Your Name]. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
